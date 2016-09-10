@@ -4,7 +4,7 @@ MAINTAINER Yannick Buron yburon@goclouder.net
 RUN apt-get -qq update && DEBIAN_FRONTEND=noninteractive apt-get -y -q install supervisor python2.7-dev python-fuse python-pyxattr python-pylibacl python-tornado linux-libc-dev acl attr par2 git make cron ncftp g++ 
 
 ADD http://www.claudiokuenzler.com/downloads/nrpe/nagios-nrpe-server_2.15-1ubuntu2_amd64.xenial.deb /tmp/nrpe.deb
-RUN dpkg -i nrpe.deb
+RUN dpkg -i /tmp/nrpe.deb
 
 RUN git clone git://github.com/bup/bup /opt/bup
 RUN make -C /opt/bup
